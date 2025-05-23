@@ -11,7 +11,7 @@
 [![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white)](https://jwt.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](./LICENSE)
 
-<img src="https://raw.githubusercontent.com/microsoft/vscode-icons/main/icons/file_type_csharp.svg" width="100" height="100" alt="C# Logo"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" width="100" height="100" alt="C# Logo"/>
 
 *A robust, scalable, and production-ready chat API built with modern .NET technologies*
 
