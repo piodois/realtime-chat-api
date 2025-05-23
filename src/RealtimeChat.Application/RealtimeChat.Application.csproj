@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RealtimeChat.Domain\RealtimeChat.Domain.csproj" />
+    <ProjectReference Include="..\RealtimeChat.Infrastructure\RealtimeChat.Infrastructure.csproj" />
+    <ProjectReference Include="..\RealtimeChat.Shared\RealtimeChat.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

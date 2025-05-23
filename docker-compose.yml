@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: realtime-chat-db
+    environment:
+      POSTGRES_DB: RealtimeChatDb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: yourpassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - chat-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: realtime-chat-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - chat-network
+
+  api:
+    build:
+      context: .
+      dockerfile: src/RealtimeChat.API/Dockerfile
+    container_name: realtime-chat-api
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=postgres;Database=RealtimeChatDb;Username=postgres;Password=yourpassword
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - chat-network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  chat-network:
+    driver: bridge
